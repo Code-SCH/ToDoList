@@ -21,7 +21,9 @@ const Login = () => {
                     ToDoList
                 </Logo>
                 <LoginButton onClick={kakaoLoginHandler} />
+
             </LogoBox>
+
         </>
     );
 };
