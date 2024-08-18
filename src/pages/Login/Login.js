@@ -16,29 +16,30 @@ const Login = () => {
     const kakaoLoginHandler = () => {
         window.location.href = KAKAO_LINK;
     };
-    const handleButtonClick = () => {
+
+    const handleButtonClick = async () => {
         const postData = {
-            name: 'hoon',
-            age: 25,
+            name: 'John Doe',
+            age: 30,
         };
 
-        axios.post(`${process.env.REACT_APP_SERVER_URL / test}`, postData)
-            .then(response => {
-                console.log('Response:', response.data);
-            })
-            .catch(error => {
-                console.error('There was an error making the request:', error);
-            });
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/test}`, postData);
+            console.log('Response:', response.data);
+        } catch (error) {
+            console.error('There was an error making the request:', error);
+        }
     };
+
     return (
         <>
             <LogoBox>
                 <Logo>
                     ToDoList
                 </Logo>
-                <LoginButton onClick={handleButtonClick} />
+                <LoginButton onClick={kakaoLoginHandler} />
             </LogoBox>
-            <button onClick={testHandler}>테스트</button>
+            <button onClick={handleButtonClick}>테스트</button>
         </>
     );
 };
