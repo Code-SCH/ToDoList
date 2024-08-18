@@ -14,9 +14,9 @@ import CalendarBody from "../../components/Calendar/Calendar";
 import TodoItem from "../../components/TodoItem/TodoItem";
 import axios from "axios";
 
-// Weather
-import Weather from "../../components/Weather/Weather";
-
+//weather
+import BeforeWeather from "../../components/BeforeWeather/BeforeWeather";
+import TodayWeather from "../../components/TodayWeather/TodayWeather";
 const Home = () => {
   const [todos, setTodos] = useState([
     { text: "독서", done: false },
@@ -68,7 +68,8 @@ const Home = () => {
     <MainDiv>
       <LeftDiv>
         <CalendarBody onDateClick={handleDateClick} />
-        <Weather />
+        <BeforeWeather />
+        <TodayWeather />
       </LeftDiv>
       <RightDiv>
         <TodoList>
